@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cj0uxqvln8r4v"]
+
+[ext_resource type="Script" uid="uid://cmhk2jj5sl8o6" path="res://enemy.gd" id="1_s7bn3"]
+[ext_resource type="Texture2D" uid="uid://cc4qkblcn2f3l" path="res://sci-fi platformer - free/tileset.png" id="1_tt7e2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gqquq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqquq"]
+atlas = ExtResource("1_tt7e2")
+region = Rect2(48.456905, 16.636429, 31.437916, 31.187973)
+
+[node name="Enemy" type="RigidBody2D" unique_id=1961843781]
+script = ExtResource("1_s7bn3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1955206532]
+shape = SubResource("CircleShape2D_gqquq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1824557507]
+texture = SubResource("AtlasTexture_gqquq")
