@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bgdx4qi1wj3ko"]
+
+[ext_resource type="Script" uid="uid://dsy3jvjksooov" path="res://jumppad.gd" id="1_dyk2y"]
+[ext_resource type="Texture2D" uid="uid://cc4qkblcn2f3l" path="res://sci-fi platformer - free/tileset.png" id="2_abw55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1q16"]
+size = Vector2(26, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyk2y"]
+atlas = ExtResource("2_abw55")
+region = Rect2(193.0267, 16.053307, 29.276611, 28.955555)
+
+[node name="Jumppad" type="Area2D" unique_id=990686309]
+script = ExtResource("1_dyk2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1917390381]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_j1q16")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=6002096]
+position = Vector2(0, -2)
+rotation = -3.1398954
+texture = SubResource("AtlasTexture_dyk2y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -9,11 +9,17 @@
 atlas = ExtResource("1_tt7e2")
 region = Rect2(48.456905, 16.636429, 31.437916, 31.187973)
 
-[node name="Enemy" type="RigidBody2D" unique_id=1961843781]
+[node name="Enemy" type="RigidBody2D" unique_id=1961843781 groups=["Enemy"]]
+mass = 0.25
+gravity_scale = 0.125
+contact_monitor = true
 script = ExtResource("1_s7bn3")
+force = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1955206532]
 shape = SubResource("CircleShape2D_gqquq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1824557507]
 texture = SubResource("AtlasTexture_gqquq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

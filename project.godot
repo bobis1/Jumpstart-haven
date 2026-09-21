@@ -13,12 +13,23 @@ config_version=5
 config/name="Jumpstart"
 run/main_scene="uid://8wm5cgbdd0nw"
 config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/bg_color=Color(0.23243368, 0.14347866, 0.33950636, 1)
 config/icon="res://icon.svg"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+PlayerMarker=""
+Player=""
+Enemy=""
 
 [input]
 
@@ -64,3 +75,4 @@ ui_down={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.17974344, 0.14271638, 0.37060758, 1)

@@ -7,5 +7,7 @@ extends Node2D
 func _on_timer_timeout() -> void:
 	timer.start()
 	var enemyInstance = enemy.instantiate()
+	enemyInstance.global_position = global_position
+	print("Spawned")
 	get_parent().add_child(enemyInstance)
 	pass
